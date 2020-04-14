@@ -1,0 +1,31 @@
+# server
+server:
+  port: 8080
+
+# spring
+spring:
+  application:
+    name: spring-security-samples
+  # JDBC
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_security?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: xzb19930617
+    # datasource
+    hikari:
+      pool-name: hikari-datasource
+      minimum-idle: 10
+      maximum-pool-size: 25
+      auto-commit: true
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+# MyBatis
+mybatis:
+  config-location: classpath:mybatis/mybatis-conf.xml
+  mapper-locations:
+    - classpath:mybatis/mapper/*.xml

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--
+            开启驼峰命名规则
+        -->
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+        <!--
+            输出sql语句到控制台
+        -->
+        <setting name="logImpl" value="log4j2"/>
+        <!--
+            对于批量更新操作缓存SQL以提高性能  SIMPLE
+            注意：只有在启用SIMPLE模式下，主键才能返回到实体类中
+        -->
+        <setting name="defaultExecutorType" value="BATCH" />
+    </settings>
+    <typeAliases>
+        <!--
+            开启别名
+        -->
+        <package name="com.example.entity"/>
+    </typeAliases>
+</configuration>
